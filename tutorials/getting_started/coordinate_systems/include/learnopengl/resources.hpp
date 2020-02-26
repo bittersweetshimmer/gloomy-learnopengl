@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 
-#include <stb/stb_image.hpp>
+#include <stb/stb_image.h>
 
 #include <gloomy/Sources/Shader.hpp>
 #include <gloomy/Sources/Image.hpp>
