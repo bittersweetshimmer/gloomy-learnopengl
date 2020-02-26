@@ -14,12 +14,6 @@ int main(int argc, char *argv[]) {
   return learnopengl::glfw_context(SCR_WIDTH, SCR_HEIGHT, "gloomy", [&](GLFWwindow &window) {
     gloomy::gl::enable(gloomy::Capability::DEPTH_TEST);
 
-    using Position = gloomy::Attribute<struct PositionTag, glm::vec3>;
-    using TextureCoord = gloomy::Attribute<struct TextureCoordTag, glm::vec2>;
-
-    using Attributes = gloomy::Attributes<Position, TextureCoord>;
-    using Vertex = gloomy::Vertex<Position, TextureCoord>;
-
     const auto cube = learnopengl::make_cube();
     const auto cube_positions = std::array<glm::vec3, 10>{
         glm::vec3( 0.0f,  0.0f,  0.0f),
@@ -43,7 +37,7 @@ int main(int argc, char *argv[]) {
     );
 
     const auto vertex_buffer = gloomy::make_ready<gloomy::VertexBuffer>(cube);
-    const auto vertex_array = gloomy::make_generated<gloomy::VertexArray>(Attributes::dynamic());
+    const auto vertex_array = gloomy::make_generated<gloomy::VertexArray>(learnopengl::Attributes::dynamic());
 
     gloomy::use([&] { vertex_array.commit(); }, vertex_array, vertex_buffer);
 
