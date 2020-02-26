@@ -17,6 +17,7 @@ else()
     target_link_libraries(learnopengl_transformations ${GLFW_STATIC_LIBRARIES})
 endif()
 
+target_link_libraries(learnopengl_transformations glfw)
 target_link_libraries(learnopengl_transformations gloomy)
 target_link_libraries(learnopengl_transformations stb)
 target_link_libraries(learnopengl_transformations glm)

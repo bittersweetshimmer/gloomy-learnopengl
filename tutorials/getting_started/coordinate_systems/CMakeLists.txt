@@ -8,15 +8,7 @@ set_target_properties(learnopengl_coordinate_systems PROPERTIES
 
 target_include_directories(learnopengl_coordinate_systems PUBLIC ./include/)
 
-if(WIN32)
-    target_include_directories(learnopengl_coordinate_systems PRIVATE ${GLFW_INCLUDE_DIRS})
-    target_link_directories(learnopengl_coordinate_systems PRIVATE ${GLFW_LIB_PATH})
-    target_link_libraries(learnopengl_coordinate_systems glfw3)
-else()
-    target_include_directories(learnopengl_coordinate_systems PRIVATE ${GLFW_INCLUDE_DIRS})
-    target_link_libraries(learnopengl_coordinate_systems ${GLFW_STATIC_LIBRARIES})
-endif()
-
+target_link_libraries(learnopengl_coordinate_systems glfw)
 target_link_libraries(learnopengl_coordinate_systems gloomy)
 target_link_libraries(learnopengl_coordinate_systems stb)
 target_link_libraries(learnopengl_coordinate_systems glm)

@@ -8,15 +8,7 @@ set_target_properties(learnopengl_camera PROPERTIES
 
 target_include_directories(learnopengl_camera PUBLIC ./include/)
 
-if(WIN32)
-    target_include_directories(learnopengl_camera PRIVATE ${GLFW_INCLUDE_DIRS})
-    target_link_directories(learnopengl_camera PRIVATE ${GLFW_LIB_PATH})
-    target_link_libraries(learnopengl_camera glfw3)
-else()
-    target_include_directories(learnopengl_camera PRIVATE ${GLFW_INCLUDE_DIRS})
-    target_link_libraries(learnopengl_camera ${GLFW_STATIC_LIBRARIES})
-endif()
-
+target_link_libraries(learnopengl_camera glfw)
 target_link_libraries(learnopengl_camera gloomy)
 target_link_libraries(learnopengl_camera stb)
 target_link_libraries(learnopengl_camera glm)
