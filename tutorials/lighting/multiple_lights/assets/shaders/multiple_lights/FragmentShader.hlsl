@@ -64,8 +64,8 @@ void main() {
     vec3 view_direction = normalize(u_view_position - f_position);
     
     vec3 result = calc_directional_light(u_directional_light, norm, view_direction);
-   /* for(int i = 0; i < POINT_LIGHTS_N; i++)
-        result += calc_point_light(u_point_lights[i], norm, f_position, view_direction);    */
+    for(int i = 0; i < POINT_LIGHTS_N; i++)
+        result += calc_point_light(u_point_lights[i], norm, f_position, view_direction);
     result += calc_spot_light(u_spot_light, norm, f_position, view_direction);    
     
     o_color = vec4(result, 1.0);
