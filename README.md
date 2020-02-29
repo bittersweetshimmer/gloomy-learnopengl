@@ -5,4 +5,4 @@ LearnOpenGL tutorials made with [`gloomy`](https://github.com/bittersweetshimmer
 - [GLFW](https://www.glfw.org/) - OpenGL library - `zlib/libpng`
 - [glm](https://glm.g-truc.net/0.9.9/index.html) - Linear algebra - `MIT`
 - [stb](https://github.com/nothings/stb) - Utilities - Public domain / `MIT`
-- [OBJ-Loader](https://github.com/Bly7/OBJ-Loader) - Loading .obj files (sorry [assimp](https://github.com/assimp/assimp), you seem to bloated to me) - `MIT`
+- [OBJ-Loader](https://github.com/Bly7/OBJ-Loader) - Loading .obj files (sorry [assimp](https://github.com/assimp/assimp), you seem too bloated to me) - `MIT`
