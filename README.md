@@ -6,7 +6,7 @@ LearnOpenGL tutorials made with [`gloomy`](https://github.com/bittersweetshimmer
 > git submodule update --init --recursive # pull the dependencies
 > mkdir build
 > cd build
-> cmake .. -D GLOOMY_DEBUG:BOOL=TRUE -D # error checking on each OpenGL call
+> cmake .. -D GLOOMY_DEBUG:BOOL=TRUE # error checking on each OpenGL call
 > make -j8 # or `msbuild gloomy_learnopengl.sln /m` if you're using Visual Studio 
 ```
 
