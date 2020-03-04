@@ -10,6 +10,6 @@ namespace learnopengl {
 
     using ModelAttributes = gloomy::Attributes<Position, Normal, TextureCoord>;
     
-    using Transform = gloomy::Attribute<struct TransformTag, glm::mat4>;
+    using Transform = gloomy::Attribute<struct TransformTag, glm::mat4, 16, true>;
     using InstanceAttributes = gloomy::Attributes<Transform>;
 }

@@ -49,19 +49,19 @@ namespace learnopengl {
 
             const auto& material = this->material.get();
 
-            program.uniform("material.diffuse").sampler(DIFFUSE_SLOT);
+            program.uniform("u_material.diffuse").sampler(DIFFUSE_SLOT);
             material.diffuse.get().bind_at_slot(DIFFUSE_SLOT);
 
-            program.uniform("material.specular").sampler(SPECULAR_SLOT);
+            program.uniform("u_material.specular").sampler(SPECULAR_SLOT);
             material.specular.get().bind_at_slot(SPECULAR_SLOT);
 
-            program.uniform("material.shininess").fvec_values(material.shininess);
+            program.uniform("u_material.shininess").fvec_values(material.shininess);
 
             gloomy::gl::active_texture(0);
 
             gloomy::use([&] { gloomy::draw_indexed<learnopengl::Index>(gloomy::PrimitiveKind::TRIANGLES, this->indices.size()); }, this->vertex_array);
         }
-    private:
+    //private:
         gloomy::VertexArray::Owned vertex_array;
         gloomy::VertexBuffer::Owned vertex_buffer;
         gloomy::IndexBuffer::Owned index_buffer;
@@ -80,7 +80,7 @@ namespace learnopengl {
             std::unordered_map<std::string, gloomy::Texture2D::Owned>&& textures
         )
             : meshes(std::move(meshes)), materials(std::move(materials)), textures(std::move(textures)) {}
-    private:
+    //private:
         std::vector<learnopengl::Mesh> meshes;
         
         std::unordered_map<std::string, learnopengl::Material> materials;
