@@ -128,7 +128,7 @@ int main(int argc, char *argv[]) {
           auto& vao = rock_mesh.vertex_array;
           
           vao.bind();
-          glDrawElementsInstanced(GL_TRIANGLES, rock_mesh.indices.size(), GL_UNSIGNED_INT, 0, 100000);
+          gloomy::gl::draw_elements_instanced(gloomy::PrimitiveKind::TRIANGLES, rock_mesh.indices.size(), gloomy::index_type<learnopengl::Index>(), 100000);
         }
 
       }, asteroid_shader);
